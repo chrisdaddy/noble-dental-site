@@ -1,4 +1,4 @@
-// <nd-video src="…" poster="…" label="…"> — muted autoplay-when-visible loop with tap-to-unmute.
+// <nd-video src="…" poster="…" label="…"> — muted loop that starts from the top once ≥60% visible (rewinds when scrolled away), tap-to-unmute.
 // Renders into shadow DOM so the page runtime never fights over its children. No src → labeled placeholder.
 (function () {
   const PHONE = '<svg width="22" height="22" viewBox="0 0 24 24" fill="#2D8FD5"><path d="M8 5v14l11-7z"></path></svg>';
@@ -15,7 +15,13 @@
       this.shadowRoot.innerHTML = `<style>${css}</style><video src="${src}"${poster ? ` poster="${poster}"` : ''} muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video><button type="button" aria-label="Unmute" style="position:absolute;right:16px;bottom:16px;height:40px;padding:0 14px;border-radius:999px;border:0;background:rgba(255,255,255,.94);color:#1F2933;font:700 13px/1 Manrope,Helvetica,Arial,sans-serif;display:flex;align-items:center;gap:8px;cursor:pointer;box-shadow:0 10px 30px rgba(10,40,70,.18)">${SPK}<span>Sound</span></button>`;
       const v = this.shadowRoot.querySelector('video'), b = this.shadowRoot.querySelector('button');
       b.addEventListener('click', () => { v.muted = !v.muted; b.querySelector('span').textContent = v.muted ? 'Sound' : 'Mute'; b.setAttribute('aria-label', v.muted ? 'Unmute' : 'Mute'); if (v.paused) v.play().catch(() => {}); });
-      if ('IntersectionObserver' in window) new IntersectionObserver((en) => en.forEach(e => { if (e.isIntersecting) v.play().catch(() => {}); else v.pause(); }), { threshold: 0.35 }).observe(this);
+      // Start only once most of the video (60%) is on screen so viewers catch the opening; when it's nearly
+      // gone (<20%) pause and rewind so it always begins from the start next time. The gap avoids flapping.
+      if ('IntersectionObserver' in window) new IntersectionObserver((en) => en.forEach(e => {
+        const r = e.isIntersecting ? e.intersectionRatio : 0;
+        if (r >= 0.6) v.play().catch(() => {});
+        else if (r < 0.2) { v.pause(); if (v.currentTime > 0) { try { v.currentTime = 0; } catch (_) {} } }
+      }), { threshold: [0, 0.2, 0.6] }).observe(this);
       else v.play().catch(() => {});
     }
   }
