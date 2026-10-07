@@ -18,13 +18,13 @@
 .it{position:absolute;will-change:transform;animation:float 6s ease-in-out infinite;filter:drop-shadow(0 28px 26px rgba(10,40,70,.18))}
 .it img{width:100%;height:auto;display:block}
 .sh{position:absolute;height:6%;border-radius:50%;background:radial-gradient(rgba(10,40,70,.22),transparent 70%);animation:shade 6s ease-in-out infinite}
-.lb{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:9px;background:#fff;border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;color:#1F2933;box-shadow:0 12px 30px rgba(10,40,70,.12);white-space:nowrap;max-width:calc(100% - 28px);overflow:hidden;text-overflow:ellipsis}
+.lb{position:absolute;z-index:6;left:14px;bottom:14px;display:flex;align-items:center;gap:9px;background:#fff;border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;color:#1F2933;box-shadow:0 12px 30px rgba(10,40,70,.12);white-space:nowrap;max-width:calc(100% - 28px);overflow:hidden;text-overflow:ellipsis}
 .lb i{width:8px;height:8px;border-radius:50%;background:#12984B;animation:pulse 2.2s infinite}
 .ring{position:absolute;border-radius:50%;border:2px solid #12984B;animation:ring 2.4s ease-out infinite;opacity:0}
 .route{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
 .route path{stroke:#2D8FD5;stroke-width:3;fill:none;stroke-dasharray:8 10;animation:dash 1.6s linear infinite}
-.tick{position:absolute;width:24px;height:24px;border-radius:50%;background:#12984B;display:flex;align-items:center;justify-content:center;transform:scale(0);animation:tick 5s ease-out infinite}
-.gauge{position:absolute;left:14px;top:14px;width:76px;height:76px;border-radius:50%;background:#fff;box-shadow:0 12px 30px rgba(10,40,70,.12);display:flex;align-items:center;justify-content:center}
+.tick{position:absolute;z-index:4;width:24px;height:24px;border-radius:50%;background:#12984B;display:flex;align-items:center;justify-content:center;transform:scale(0);animation:tick 5s ease-out infinite}
+.gauge{position:absolute;z-index:5;left:14px;top:14px;width:76px;height:76px;border-radius:50%;background:#fff;box-shadow:0 12px 30px rgba(10,40,70,.12);display:flex;align-items:center;justify-content:center}
 .gauge svg{width:64px;height:64px;overflow:visible}
 .gauge .n{transform-origin:32px 32px;animation:needle 6s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3.5%)}}
