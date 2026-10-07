@@ -21,8 +21,8 @@ Replace each `<image-slot …></image-slot>` with `<img src="…" alt="…" styl
 - [ ] work-order.html — same; also needs real file upload + return-label generation (or link to shipping provider)
 
 ## Nice-to-have
-- [ ] Favicon .ico/.svg from `assets/logo/nd-mark.png`; apple-touch-icon
+- [x] Favicon + apple-touch-icon (PNG, generated from `assets/logo/nd-mark.png`: `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png`)
 - [ ] OG image: `assets/logo/nd-lockup.png` is set; consider a 1200×630 branded card
-- [ ] Analytics (Vercel Analytics or GA)
-- [ ] sitemap.xml + robots.txt
+- [ ] Analytics — enable Web Analytics on the Vercel project, then add `<script defer src="/_vercel/insights/script.js"></script>` to every page
+- [x] sitemap.xml + robots.txt — currently point at `noble-dental-site-opal.vercel.app`; swap to the custom domain when it's attached
 - [ ] Explainer video embed (export from the design project) on index between intro and services, and in the services hero
