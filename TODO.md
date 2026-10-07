@@ -9,12 +9,8 @@
 - [ ] `nobledental.com` in footer/CTA copy → real domain
 - [ ] Service Terms & Privacy links (footer) → pages or remove
 
-## Photos (dashed `<image-slot>` placeholders → `<img>`)
-- [ ] index: hero (`nd-hero`), equipment close-up (`nd-equipment-photo`), maintenance (`nd-maint-photo`)
-- [ ] services: hero + 3 section photos
-- [ ] emergency-calls / equipment-repair / monthly-maintenance: hero photo each
-- [ ] why-noble: 3 team photos
-Replace each `<image-slot …></image-slot>` with `<img src="…" alt="…" style="width:100%;height:100%;object-fit:cover;display:block">`. Hero on index sits behind a blue→green multiply overlay — any bright photo/video works.
+## Photos
+- [ ] index hero is a solid blue→green gradient for now. When real footage lands, insert `<div style="position:absolute;inset:0"><img|video … style="width:100%;height:100%;object-fit:cover"></div>` as the first child of `<section id="top">` and add `mix-blend-mode:multiply;opacity:.9` back onto the gradient div. Everything else uses animated `<nd-scene>` icon compositions.
 
 ## Forms (currently simulate submit in the page logic class)
 - [ ] request-service.html — wire `submit` handler to Formspree / Resend / your backend
@@ -25,4 +21,3 @@ Replace each `<image-slot …></image-slot>` with `<img src="…" alt="…" styl
 - [ ] OG image: `assets/logo/nd-lockup.png` is set; consider a 1200×630 branded card
 - [ ] Analytics — enable Web Analytics on the Vercel project, then add `<script defer src="/_vercel/insights/script.js"></script>` to every page
 - [x] sitemap.xml + robots.txt — currently point at `noble-dental-site-opal.vercel.app`; swap to the custom domain when it's attached
-- [ ] Explainer video embed (export from the design project) on index between intro and services, and in the services hero

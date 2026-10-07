@@ -6,3 +6,4 @@
 - Nav links are charcoal with a green underline on hover/active — don't make them blue.
 - Icons: `assets/icons/*.png` (1024px, transparent). Logo: `assets/logo/` (nd-mark, nd-lockup, nd-horizontal; -white variants for colored grounds).
 - Work through TODO.md before launch.
+- `nd-scene.js` — `<nd-scene kind="…">` animated isometric compositions (kinds: emergency, repair, maintenance, equipment, mailin, team, bench, support). Shadow DOM; keep it.
