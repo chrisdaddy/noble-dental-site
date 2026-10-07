@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+<style>
+html,body,#map{margin:0;height:100%;width:100%;background:#F1F7FC;font-family:Manrope,Helvetica,Arial,sans-serif}
+#map.notiles{background-color:#F4F8FB;background-image:radial-gradient(#CFDCE7 1px,transparent 1px);background-size:22px 22px}
+.nd-note{position:absolute;left:14px;top:14px;z-index:500;background:#fff;border-radius:999px;padding:7px 12px;font:700 11px/1 Manrope,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#5A6B78;box-shadow:0 6px 18px rgba(10,40,70,.1)}
+.leaflet-tile-pane{filter:grayscale(1) saturate(0) brightness(1.04) contrast(.92);opacity:.9}
+.nd-label{background:#fff;border:0;border-radius:999px;padding:5px 10px;font:700 12px/1 Manrope,sans-serif;color:#1F2933;box-shadow:0 6px 18px rgba(10,40,70,.14);white-space:nowrap}
+.nd-label.hq{background:#12984B;color:#fff}
+.leaflet-tooltip:before{display:none}
+.leaflet-control-attribution{font:11px/1.4 Manrope,sans-serif;background:rgba(255,255,255,.85);color:#5A6B78}
+.leaflet-control-attribution a{color:#2D8FD5}
+</style></head>
+<body><div id="map" aria-label="Noble Dental service area map"></div>
+<script>
+const map = L.map('map', { zoomControl: false, scrollWheelZoom: false, attributionControl: false, zoomSnap: 0.25 });
+document.getElementById('map').classList.add('notiles');
+const n = document.createElement('div'); n.className = 'nd-note'; n.textContent = 'OKC metro · to scale'; document.getElementById('map').appendChild(n);
+L.control.zoom({ position: 'bottomright' }).addTo(map);
+L.circle([35.47, -97.52], { radius: 32000, color: '#2D8FD5', weight: 1.5, dashArray: '4 6', fillColor: '#2D8FD5', fillOpacity: .06 }).addTo(map);
+// [name, lat, lng, labelDirection, isHQ]
+const cities = [
+  ['Oklahoma City', 35.4676, -97.5164, 'left', true], ['Edmond', 35.6528, -97.4781, 'top'], ['Norman', 35.2226, -97.4395, 'bottom'],
+  ['Moore', 35.3395, -97.4867, 'left'], ['Yukon', 35.5067, -97.7625, 'top'], ['Midwest City', 35.4495, -97.3967, 'right'],
+  ['Del City', 35.4420, -97.4409, 'bottom'], ['Mustang', 35.3842, -97.7245, 'bottom']
+];
+const off = { top: [0, -8], bottom: [0, 8], left: [-8, 0], right: [8, 0] };
+cities.forEach(([name, lat, lng, dir, hq]) => {
+  L.circleMarker([lat, lng], { radius: hq ? 8 : 6, color: '#fff', weight: 2, fillColor: hq ? '#12984B' : '#2D8FD5', fillOpacity: 1 })
+    .addTo(map).bindTooltip(name, { permanent: true, direction: dir, offset: off[dir], className: 'nd-label' + (hq ? ' hq' : '') });
+});
+const fit = () => map.fitBounds(L.latLngBounds(cities.map(c => [c[1], c[2]])), { padding: [56, 72] });
+fit();
+new ResizeObserver(() => { map.invalidateSize(); fit(); }).observe(document.getElementById('map'));
+</script></body></html>
