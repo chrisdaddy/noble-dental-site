@@ -7,3 +7,4 @@
 - Icons: `assets/icons/*.png` (1024px, transparent). Logo: `assets/logo/` (nd-mark, nd-lockup, nd-horizontal; -white variants for colored grounds).
 - Work through TODO.md before launch.
 - `nd-scene.js` — `<nd-scene kind="…">` animated isometric compositions (kinds: emergency, repair, maintenance, equipment, mailin, team, bench, support). Shadow DOM; keep it.
+- Mobile: each page's `<style>` ends with a `@media (max-width:640px)` block that overrides inline styles (needs `!important`) via `data-m` hooks — `hero` (home hero grid), `ctas` (button rows → full-width stacked), `help` (home "Get help today" cards) — plus 16px form controls and full-width submit buttons. Add `data-m="ctas"` to any new CTA row.

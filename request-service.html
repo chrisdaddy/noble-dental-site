@@ -20,7 +20,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <script src="./nd-site.js"></script>
-<style>body{margin:0;background:#fff;color:#1F2933;font-family:Manrope,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:#2D8FD5;text-decoration:none}a:hover{color:#12984B}html{scroll-behavior:smooth;scroll-padding-top:80px}input::placeholder,textarea::placeholder{color:#9AA7B2}image-slot[data-ico]::part(empty){font-size:10px;line-height:1.2;gap:3px;padding:6px}image-slot[data-ico="sm"]::part(empty){color:transparent}@media (max-width:1000px){[data-sticky]{position:static!important}}</style>
+<style>body{margin:0;background:#fff;color:#1F2933;font-family:Manrope,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:#2D8FD5;text-decoration:none}a:hover{color:#12984B}html{scroll-behavior:smooth;scroll-padding-top:80px}input::placeholder,textarea::placeholder{color:#9AA7B2}image-slot[data-ico]::part(empty){font-size:10px;line-height:1.2;gap:3px;padding:6px}image-slot[data-ico="sm"]::part(empty){color:transparent}@media (max-width:1000px){[data-sticky]{position:static!important}}
+@media (max-width:640px){
+[data-m="hero"]{min-height:0!important;padding-top:32px!important;padding-bottom:36px!important;gap:24px!important}
+[data-m="hero"]>div:first-child{gap:18px!important}
+[data-m="hero"] h1{font-size:clamp(34px,9.6vw,40px)!important;max-width:none!important}
+[data-m="hero"] p{font-size:16px!important;line-height:1.55!important}
+[data-m="ctas"]{flex-direction:column!important;align-items:stretch!important;gap:10px!important}
+[data-m="ctas"]>a{display:flex!important;width:100%!important;box-sizing:border-box!important;justify-content:center!important;min-height:54px!important;font-size:17px!important;padding:14px 20px!important}
+[data-m="help"]{grid-template-columns:1fr!important}
+[data-m="help"]>a{flex-direction:row-reverse!important;align-items:center!important;justify-content:space-between!important;min-height:0!important;padding:16px 18px!important;gap:12px!important}
+[data-m="help"]>a>span:last-child{font-size:17px!important}
+[data-m="help"]>a>span:first-child{font-size:11px!important;white-space:nowrap}
+input,select,textarea{font-size:16px!important}
+button[type="submit"]{display:flex!important;width:100%!important;box-sizing:border-box!important;min-height:54px!important}
+}
+</style>
 </helmet>
 <div data-screen-label="Noble Dental — Request Service" style="width:100%;background:#fff;color:#1F2933;overflow:clip">
 <dc-import name="nd-nav" active="" hint-size="100%,124px" style="position:sticky;top:0;z-index:50"></dc-import>

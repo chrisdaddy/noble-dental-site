@@ -21,13 +21,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <script src="./nd-site.js"></script>
 <script src="./nd-scene.js"></script>
-<style>body{margin:0;background:#fff;color:#1F2933;font-family:Manrope,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:#2D8FD5;text-decoration:none}a:hover{color:#12984B}html{scroll-behavior:smooth;scroll-padding-top:80px}</style>
+<style>body{margin:0;background:#fff;color:#1F2933;font-family:Manrope,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:#2D8FD5;text-decoration:none}a:hover{color:#12984B}html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (max-width:640px){
+[data-m="hero"]{min-height:0!important;padding-top:32px!important;padding-bottom:36px!important;gap:24px!important}
+[data-m="hero"]>div:first-child{gap:18px!important}
+[data-m="hero"] h1{font-size:clamp(34px,9.6vw,40px)!important;max-width:none!important}
+[data-m="hero"] p{font-size:16px!important;line-height:1.55!important}
+[data-m="ctas"]{flex-direction:column!important;align-items:stretch!important;gap:10px!important}
+[data-m="ctas"]>a{display:flex!important;width:100%!important;box-sizing:border-box!important;justify-content:center!important;min-height:54px!important;font-size:17px!important;padding:14px 20px!important}
+[data-m="help"]{grid-template-columns:1fr!important}
+[data-m="help"]>a{flex-direction:row-reverse!important;align-items:center!important;justify-content:space-between!important;min-height:0!important;padding:16px 18px!important;gap:12px!important}
+[data-m="help"]>a>span:last-child{font-size:17px!important}
+[data-m="help"]>a>span:first-child{font-size:11px!important;white-space:nowrap}
+input,select,textarea{font-size:16px!important}
+button[type="submit"]{display:flex!important;width:100%!important;box-sizing:border-box!important;min-height:54px!important}
+}
+</style>
 </helmet>
 <div data-screen-label="Noble Dental — Dental Equipment Repair" style="width:100%;background:#fff;color:#1F2933;overflow:clip">
 <dc-import name="nd-nav" active="services" hint-size="100%,124px" style="position:sticky;top:0;z-index:50"></dc-import>
 
 <section style="background:#F1F7FC;border-bottom:1px solid #E1ECF4"><div style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(20px,5vw,72px) clamp(48px,6vw,88px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(32px,5vw,80px);align-items:center">
-<div style="display:flex;flex-direction:column;gap:22px;min-width:0"><div style="display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#2D8FD5"><a href="./services.html" style="color:#7A8894" style-hover="color:#2D8FD5">Services</a><span style="color:#D5DEE6">/</span>Dental Equipment Repair</div><h1 style="margin:0;font-family:Poppins,sans-serif;font-size:clamp(40px,5.4vw,74px);line-height:1.02;letter-spacing:-.035em;font-weight:600;text-wrap:balance">If it's in your operatory, <em style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:#2D8FD5">we repair it.</em></h1><p style="margin:0;font-size:18px;line-height:1.6;color:#5A6B78;max-width:540px;text-wrap:pretty">Vacuum systems, air compressors, dental chairs, sterilizers and all in-office dental equipment — serviced to prolong the life of your tools and keep your business running smoothly.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="./request-service.html" style="display:inline-flex;align-items:center;gap:10px;background:#12984B;color:#fff;font-size:15px;font-weight:700;padding:16px 28px;border-radius:999px;transition:background .2s" style-hover="background:#2D8FD5;color:#fff">Request a repair <span aria-hidden="true">→</span></a><a href="./work-order.html" style="display:inline-flex;align-items:center;gap:10px;border:1.5px solid #D5DEE6;color:#1F2933;font-size:15px;font-weight:700;padding:15px 26px;border-radius:999px;background:#fff" style-hover="border-color:#1F2933;color:#1F2933">Mail-in work order</a></div></div>
+<div style="display:flex;flex-direction:column;gap:22px;min-width:0"><div style="display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#2D8FD5"><a href="./services.html" style="color:#7A8894" style-hover="color:#2D8FD5">Services</a><span style="color:#D5DEE6">/</span>Dental Equipment Repair</div><h1 style="margin:0;font-family:Poppins,sans-serif;font-size:clamp(40px,5.4vw,74px);line-height:1.02;letter-spacing:-.035em;font-weight:600;text-wrap:balance">If it's in your operatory, <em style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:#2D8FD5">we repair it.</em></h1><p style="margin:0;font-size:18px;line-height:1.6;color:#5A6B78;max-width:540px;text-wrap:pretty">Vacuum systems, air compressors, dental chairs, sterilizers and all in-office dental equipment — serviced to prolong the life of your tools and keep your business running smoothly.</p><div data-m="ctas" style="display:flex;gap:12px;flex-wrap:wrap"><a href="./request-service.html" style="display:inline-flex;align-items:center;gap:10px;background:#12984B;color:#fff;font-size:15px;font-weight:700;padding:16px 28px;border-radius:999px;transition:background .2s" style-hover="background:#2D8FD5;color:#fff">Request a repair <span aria-hidden="true">→</span></a><a href="./work-order.html" style="display:inline-flex;align-items:center;gap:10px;border:1.5px solid #D5DEE6;color:#1F2933;font-size:15px;font-weight:700;padding:15px 26px;border-radius:999px;background:#fff" style-hover="border-color:#1F2933;color:#1F2933">Mail-in work order</a></div></div>
 <div style="min-width:0;aspect-ratio:4/3;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 30px 70px rgba(10,40,70,.12)"><nd-scene kind="repair"></nd-scene></div>
 </div></section>
 
