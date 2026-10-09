@@ -6,7 +6,7 @@
 - [ ] `[Street address]` / `[ZIP]` (work-order.html, contact.html) → shop address
 - [ ] `href="#"` on **Client Portal** links (nav, footer, home, contact, request-service) → portal URL
 - [ ] `href="#"` on Facebook / Instagram (footer, contact) → real URLs, or remove
-- [ ] `nobledental.com` in footer/CTA copy → real domain
+- [x] Domain: www.nobledentalservice.com attached on Vercel; no `nobledental.com` copy remains
 - [ ] Service Terms & Privacy links (footer) → pages or remove
 
 ## Photos
@@ -20,4 +20,4 @@
 - [x] Favicon + apple-touch-icon (PNG, generated from `assets/logo/nd-mark.png`: `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png`)
 - [ ] OG image: `assets/logo/nd-lockup.png` is set; consider a 1200×630 branded card
 - [ ] Analytics — enable Web Analytics on the Vercel project, then add `<script defer src="/_vercel/insights/script.js"></script>` to every page
-- [x] sitemap.xml + robots.txt — currently point at `noble-dental-site-opal.vercel.app`; swap to the custom domain when it's attached
+- [x] sitemap.xml + robots.txt → https://www.nobledentalservice.com (apex 308s to www)
