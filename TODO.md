@@ -1,8 +1,8 @@
 # Launch checklist
 
 ## Replace placeholders (find-and-replace across *.html + nd-*.dc.html)
-- [ ] `(405) 000-0000` and `tel:4050000000` → real phone
-- [ ] `service@nobledental.com` → real email
+- [x] Phone → (855) 505-2244 (Noble Med main line, `tel:8555052244`); form field examples use (405) 555-0123
+- [x] Email → service@noblemedicalservice.com
 - [ ] `[Street address]` / `[ZIP]` (work-order.html, contact.html) → shop address
 - [ ] `href="#"` on **Client Portal** links (nav, footer, home, contact, request-service) → portal URL
 - [ ] `href="#"` on Facebook / Instagram (footer, contact) → real URLs, or remove
